@@ -3,12 +3,12 @@ from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from config import config
 from app.services.logger import setup_logger
+from app.db.db import db
 
 from app.routes.web_interface import main
 
 
 bootstrap = Bootstrap()
-db = SQLAlchemy()
 logger = setup_logger(__name__)
 
 

@@ -5,4 +5,4 @@ main = Blueprint("main", __name__)
 
 @main.route("/")
 def index():
-    return "I am a teapot, short and stout", 418
+    return "I am a teapot, short and stout", 200
