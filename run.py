@@ -1,11 +1,23 @@
-from flask import Flask
+# Description: This file is used to run the application
+from app.__init__py import create_app, db
+from app.services.logger import setup_logger
 
-app = Flask(__name__)
+app = create_app("development")
+
+logger = setup_logger(__name__)
 
 
-@app.route("/")
-def hello_world():  # put application's code here
-    return "Hello World!"
+def _create_database_models():
+    with app.app_context():  # Ensure app context is active
+        try:
+            print("Creating database models")
+            logger.info("Creating database models")
+            db.create_all()  # This creates the database models (tables)
+            logger.info("Database models created successfully")
+            print("Database models created successfully")
+        except Exception as e:
+            logger.error(f"Error creating database models: {e}")
+            print(f"Error creating database models: {e}")
 
 
 if __name__ == "__main__":

@@ -8,7 +8,8 @@ def setup_logger(name: str) -> logging.Logger:
     :param name: Logger name, usually `__name__`.
     :return: Configured logger instance.
     """
-    log_dir = Path.cwd() / "logs"
+
+    log_dir = Path(__file__).resolve().parent.parent.parent / "logs"
     log_dir.mkdir(parents=True, exist_ok=True)
     log_file = log_dir / "app.log"
 
