@@ -1,5 +1,5 @@
 # Description: all services related to the sql lite operations
-from app.__init__py import db
+from application.app_factory import db
 from typing import override
 
 from data_manager import DataManagerInterface
