@@ -1,0 +1,45 @@
+/* Heading Styles */
+h1 {
+    text-align: center;
+    color: cornflowerblue;
+    margin: 2em;
+}
+
+h2 {
+    text-align: left;
+    color: cadetblue;
+    margin: 1em;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover {
+    color: #ff6347;
+}
+
+.navbar-nav .nav-item {
+    padding: 0 15px;
+}
+
+.navbar .container {
+    padding: 10px 0;
+}
+
+.navbar.scrolled {
+    background-color: #222;
+}

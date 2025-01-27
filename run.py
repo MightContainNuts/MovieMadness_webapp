@@ -1,7 +1,7 @@
 # Description: This file is used to run the application
-from app.__init__py import create_app
-from app.services.logger import setup_logger
-from app.db.db import db
+from application.app_factory import create_app
+from application.services.logger import setup_logger
+from application.db.db import db
 
 app = create_app("development")
 
