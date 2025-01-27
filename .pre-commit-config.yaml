@@ -49,8 +49,13 @@ repos:
     hooks:
       - id: pytest
         name: pytest
-        entry: pytest
-        language: system
+        entry: poetry run pytest  # Use Poetry to run pytest
+        language: python
         types: [ python ]
         pass_filenames: false
         always_run: true
+        env:
+          PYTHONPATH: ./application  # Add your application path here
+        additional_dependencies:
+          - pytest
+        working_directory: ./  # Make sure to set the working directory to the project root

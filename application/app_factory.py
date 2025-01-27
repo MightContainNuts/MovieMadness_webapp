@@ -1,11 +1,11 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
-from flask_sqlalchemy import SQLAlchemy
 from config import config
-from app.services.logger import setup_logger
-from app.db.db import db
+from application.services.logger import setup_logger
+from application.db.db import db
 
-from app.routes.web_interface import main
+from application.routes.web_interface import main
+from application.routes.errors import errors
 
 
 bootstrap = Bootstrap()
@@ -20,5 +20,6 @@ def create_app(config_name):
 
     # TODO add blueprints here
     app.register_blueprint(main)
+    app.register_blueprint(errors)
     logger.info("App created using '%s' config", config_name)
     return app
