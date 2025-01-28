@@ -2,13 +2,17 @@ from sqlalchemy import Integer, String, Float
 from application.app_factory import db, create_app
 
 
-class Users(db.Model):
+class User(db.Model):
     __tablename__ = "users"
+    __table_args__ = {"extend_existing": True}
     user_id = db.Column(Integer, primary_key=True, autoincrement=True)
     username = db.Column(String(50), unique=True)
     email = db.Column(String(50), unique=True)
     first_name = db.Column(String(50))
     last_name = db.Column(String(50))
+    user_movies = db.relationship(
+        "UserMovie", backref="movie", cascade="all, delete-orphan"
+    )
 
     def __repr__(self):
         return (
@@ -23,8 +27,9 @@ class Users(db.Model):
         return f"{self.username}"
 
 
-class Movies(db.Model):
-    __tablename = "movies"
+class Movie(db.Model):
+    __tablename__ = "movies"
+    __table_args__ = {"extend_existing": True}
     movie_id = db.Column(Integer, primary_key=True, autoincrement=True)
     movie_name = db.Column(String(50))
     movie_director = db.Column(String(50))
@@ -33,7 +38,7 @@ class Movies(db.Model):
 
     def __repr__(self):
         return (
-            f"<Movie(id={self.movie_id}',"
+            f"<Movie(id='{self.movie_id}',"
             f"name='{self.movie_name}', "
             f"director='{self.movie_director}', "
             f"release_date='{self.movie_release_date}', "
@@ -44,6 +49,27 @@ class Movies(db.Model):
         return f"{self.movie_name}"
 
 
+class UserMovie(db.Model):
+    __tablename__ = "user_movies"
+    __table_args__ = {"extend_existing": True}
+    user_id = db.Column(
+        Integer, db.ForeignKey("users.user_id"), primary_key=True
+    )
+    movie_id = db.Column(
+        Integer, db.ForeignKey("movies.movie_id"), primary_key=True
+    )
+
+    def __repr__(self):
+        return (
+            f"<UserMovie(id={self.user_movie_id}',"
+            f"user_id='{self.user_id}', "
+            f"movie_id='{self.movie_id}')>"
+        )
+
+    def __str__(self):
+        return f"{self.user_id} - {self.movie_id}"
+
+
 def _create_database_models():
     with app.app_context():
         app.logger.info("Creating database models...")
@@ -52,8 +78,9 @@ def _create_database_models():
 
 
 if __name__ == "__main__":
-    app = create_app("development")
+    app = create_app("testing")
     with app.app_context():
+        db.drop_all()
         print("Creating database models...")
         db.create_all()
         print("Database models created successfully.")
