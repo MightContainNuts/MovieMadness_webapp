@@ -2,9 +2,14 @@ import os
 from pathlib import Path
 
 base_dir = Path(__file__).resolve().parent
-db_path_dev = base_dir / "app" / "db" / "moviemadness.sqlite"
-db_path_test = base_dir / "app" / "db" / "test_library.sqlite"
-db_path_prod = base_dir / "app" / "db" / "moviemadness.sqlite"
+db_path_dev = base_dir / "application" / "db" / "moviemadness.sqlite"
+db_path_test = base_dir / "application" / "db" / "test_movie_db.sqlite"
+db_path_prod = base_dir / "application" / "db" / "moviemadness.sqlite"
+
+# Convert Path objects to strings
+db_path_dev_str = str(db_path_dev)
+db_path_test_str = str(db_path_test)
+db_path_prod_str = str(db_path_prod)
 
 
 class Config:
@@ -17,16 +22,16 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = f"sqlite:///{db_path_dev}"
+    SQLALCHEMY_DATABASE_URI = f"sqlite:///{db_path_dev_str}"
 
 
 class TestingConfig(Config):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = f"sqlite:///{db_path_test}"
+    SQLALCHEMY_DATABASE_URI = f"sqlite:///{db_path_test_str}"
 
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = f"sqlite:///{db_path_prod}"
+    SQLALCHEMY_DATABASE_URI = f"sqlite:///{db_path_prod_str}"
 
 
 config = {
