@@ -60,3 +60,6 @@
         height: 50px;
     }
 }
+p h1 h2 {
+    text-left-margin: 30px;
+}

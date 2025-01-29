@@ -70,16 +70,11 @@ def test_get_all_movies(app, data_manager):
 
 
 def test_add_movie(app, data_manager):
-    new_movie = {
-        "movie_name": "test_movie",
-        "movie_director": "test_director",
-        "movie_release_date": 2021,
-        "movie_rating": 5.0,
-    }
-    data_manager.add_movie(new_movie)
+    movie_name = "Inception"
+    data_manager.add_movie(movie_name)
     movies = data_manager.get_all_movies()
     assert len(movies) == 1
-    assert movies[0].movie_name == "test_movie"
+    assert movies[0].movie_name == "Inception"
 
 
 def test_update_movie(app, data_manager):
