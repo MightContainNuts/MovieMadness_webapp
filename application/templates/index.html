@@ -5,8 +5,38 @@
 {% block content %}
 
 <div class="page-header">
-    <h1> Coming Soon</h1></h1>
-    <h2>..new content...</h2>
+    <h1> CA flask driven movie app with connection to the OMBD API</h1></h1>
+    <p>
+        Welcome to the Movie Management App! This application allows users to easily manage and interact with a movie database. The app supports essential operations like adding, editing, and viewing movies. Here’s a brief overview of the technologies and tools involved:
+    </p>
+    <ul>
+        <li>
+            Flask: The core web framework for building the application. Flask provides the necessary routing and template rendering to handle requests and responses.
+        </li>
+        <li>
+            Flask-WTF: Used for creating and handling web forms, including validation, making it easier to manage user input.
+        </li>
+        <li>
+            SQLAlchemy: A powerful ORM (Object-Relational Mapping) tool that interacts with the database, allowing for easy querying and management of movie data.
+        </li>
+        <li>
+            Poetry: The Python dependency manager that simplifies managing and installing dependencies, as well as ensuring reproducible builds for the project.
+        </li>
+        <li>
+            pytest: A testing framework used for unit and integration tests to ensure the application behaves as expected and remains reliable during development.
+        </li>
+        <li>
+            Factory Pattern: The app uses the Factory Pattern to create the Flask application instance, providing a flexible and scalable architecture. This design allows easy configuration of the app and facilitates testing by creating app instances with different configurations.
+        </li>
+        <li>
+            Secret Sauce: The app integrates external APIs (such as OMDB) to fetch movie data, enriching the user experience by providing real-time information about movies. The combination of Flask, SQLAlchemy, and these external integrations makes the app robust and easy to extend.
+        </li>
+    </ul>
+    <p>
+        With this stack, the Movie Management App is designed to be modular, maintainable, and ready for future enhancements.
+        Whether you’re a movie enthusiast or a developer looking to learn more about Flask, this app is a great starting point to explore web development with Python.
+
+    </p>
 </div>
 
 {% endblock %}

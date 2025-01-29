@@ -17,7 +17,7 @@ class UserForm(FlaskForm):
     submit = SubmitField("Submit")
 
 
-class MovieForm(FlaskForm):
+class EditMovieForm(FlaskForm):
     movie_name = StringField("Movie Name", validators=[DataRequired()])
     movie_director = StringField("Director", validators=[DataRequired()])
     movie_release_date = IntegerField(
@@ -44,3 +44,8 @@ class ADDUserMovie(FlaskForm):
         "Movie", choices=[], coerce=int, validators=[DataRequired()]
     )
     submit = SubmitField("Add Movie")
+
+
+class AddMovieForm(FlaskForm):
+    movie_name = StringField("Movie Name", validators=[DataRequired()])
+    submit = SubmitField("Submit")
