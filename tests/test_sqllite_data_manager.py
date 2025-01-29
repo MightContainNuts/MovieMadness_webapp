@@ -50,7 +50,7 @@ def test_modify_user(app, data_manager):
     }
 
     IDX = 1
-    data_manager.modify_user(IDX, modify_user)
+    data_manager.update_user(IDX, modify_user)
     assert len(data_manager.get_all_users()) == 1
     assert data_manager.get_all_users()[0].username == "modified_user"
 

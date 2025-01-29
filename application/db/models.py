@@ -1,5 +1,6 @@
 from sqlalchemy import Integer, String, Float
-from application.app_factory import db, create_app
+from application.app_factory import create_app
+from application.db.db import db
 
 
 class User(db.Model):
