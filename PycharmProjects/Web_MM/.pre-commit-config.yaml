@@ -1,0 +1,23 @@
+repos:
+  - repo: git@github.com:pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+      - id: black
+        additional_dependencies: [ black ]
+        args: [ '--config=pyproject.toml' ]
+
+  - repo: local
+    hooks:
+      - id: flake8
+        name: flake8
+        entry: flake8 --exclude=venv/*
+        language: python
+        files: \.py$
+        args: [ '--config=pyproject.toml' ]
