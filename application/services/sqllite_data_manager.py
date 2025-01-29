@@ -2,7 +2,7 @@
 from typing import override, Optional
 
 from application.app_factory import db
-from application.db.models import User, Movie
+from application.db.models import User, Movie, UserMovie
 from application.services.data_manager import DataManagerInterface
 from application.services.logger import setup_logger
 
@@ -155,3 +155,18 @@ class SQLiteDataManger(DataManagerInterface):
         """get movie from database"""
         user = self.session.query(User).filter(User.user_id == user_id).first()
         return user
+
+    def get_user_movies(self, user_id):
+        """get user movies from database"""
+        user = self.get_user_from_id(user_id)
+
+        return user.movies
+
+    def add_user_movie(self, user_id, movie_id):
+        """add user movie to database"""
+        new_user_movie = UserMovie(user_id=user_id, movie_id=movie_id)
+        self.session.add(new_user_movie)
+        self.session.commit()
+        logger.info(
+            f"Movie with id {movie_id} added to user with id {user_id}"
+        )

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+{{ super() }}
+{% endblock %}
+
+{% block title %} {{actual_user.username}}'s movies! {% endblock %}
+
+{% block content %}
+<div class="container">
+    {% block page_content %}
+    <h1>Movies</h1>
+    <p> A list of all movies held in the database for {{actual_user.username}} </p>
+
+    {% if user_movie_list %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Movie Name</th>
+                <th>Director</th>
+                <th>Release Date</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user_movie in user_movie_list %}
+            <tr>
+                <td>{{ user_movie.movie_id }}</td>
+                <td>{{ user_movie.movie_name }}</td>
+                <td>{{ user_movie.movie_director }}</td>
+                <td>{{ user_movie.movie_release_date }}</td>
+                <td>{{ user_movie.movie_rating }}</td>
+                <td>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <tr>
+            <td colspan="4">No movies found</td>
+        </tr>
+    {% endif %}
+    <form method="POST" action="{{ url_for('user.add_user_movie', user_id = actual_user.user_id) }}" style="display:inline;">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.movie_to_add.label }}<br>
+        {{ form.movie_to_add(class="form-control") }}
+        {% for error in form.movie_to_add.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>
+    {% endblock %}
+</div>
+{% endblock %}
