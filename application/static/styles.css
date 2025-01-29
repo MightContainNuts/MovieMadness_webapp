@@ -1,45 +1,62 @@
-/* Heading Styles */
-h1 {
-    text-align: center;
-    color: cornflowerblue;
-    margin: 2em;
-}
-
-h2 {
-    text-align: left;
-    color: cadetblue;
-    margin: 1em;
-}
-
 /* Navbar Styles */
 .navbar {
     background-color: #333;
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 80px;
 }
 
-.navbar .navbar-brand {
+/* Flex container for Logo, Title & Links */
+.navbar-content {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+}
+
+/* Logo - Adjusted size & fixed alignment */
+.navbar-logo {
+    height: 60px;
+    width: auto;
+    margin-right: 15px;
+}
+
+/* Title next to Logo */
+.navbar-title {
+    font-size: 1.8rem;
     font-weight: bold;
-    color: #fff;
+    color: white;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Navbar Links */
+.navbar-nav {
+    display: flex;
+    align-items: center;
 }
 
 .navbar .nav-link {
     color: #fff;
+    margin: 0 12px;
 }
 
 .navbar .nav-link:hover {
     color: #ff6347;
 }
 
-.navbar-nav .nav-item {
-    padding: 0 15px;
-}
+/* Responsive Design */
+@media (max-width: 992px) {
+    .navbar-title {
+        font-size: 1.4rem;
+    }
 
-.navbar .container {
-    padding: 10px 0;
-}
-
-.navbar.scrolled {
-    background-color: #222;
+    .navbar-logo {
+        height: 50px;
+    }
 }

@@ -65,7 +65,7 @@ class SQLiteDataManger(DataManagerInterface):
         """delete user from database"""
         logger.info("Deleting user %s", user_id)
         try:
-            user = self._get_user_from_id(user_id)
+            user = self.get_user_from_id(user_id)
             self.session.delete(user)
             self.session.commit()
             logger.info("User deleted successfully %s", id)
@@ -74,11 +74,11 @@ class SQLiteDataManger(DataManagerInterface):
             self.session.rollback()
 
     @override
-    def modify_user(self, user_id: int, new_user: UserDict) -> None:
+    def update_user(self, user_id: int, new_user: UserDict) -> None:
         """modify user in database"""
         logger.info("Modifying user %s", user_id)
         try:
-            user = self._get_user_from_id(user_id)
+            user = self.get_user_from_id(user_id)
             user.username = new_user["username"]
             user.email = new_user["email"]
             user.first_name = new_user["first_name"]
@@ -118,7 +118,7 @@ class SQLiteDataManger(DataManagerInterface):
 
     @override
     def update_movie(self, movie_id, updated_movie):
-        movie = self._get_movie_from_id(movie_id)
+        movie = self.get_movie_from_id(movie_id)
         if movie:
             movie.movie_name = updated_movie["movie_name"]
             movie.movie_director = updated_movie["movie_director"]
@@ -132,7 +132,7 @@ class SQLiteDataManger(DataManagerInterface):
     @override
     def delete_movie(self, movie_id):
         """delete movie from database"""
-        movie = self._get_movie_from_id(movie_id)
+        movie = self.get_movie_from_id(movie_id)
         if movie:
             self.session.delete(movie)
             self.session.commit()
@@ -142,7 +142,7 @@ class SQLiteDataManger(DataManagerInterface):
 
     # private Helper methods
 
-    def _get_movie_from_id(self, movie_id):
+    def get_movie_from_id(self, movie_id):
         """get movie from database"""
         movie = (
             self.session.query(Movie)
@@ -151,7 +151,7 @@ class SQLiteDataManger(DataManagerInterface):
         )
         return movie
 
-    def _get_user_from_id(self, user_id):
+    def get_user_from_id(self, user_id):
         """get movie from database"""
         user = self.session.query(User).filter(User.user_id == user_id).first()
         return user

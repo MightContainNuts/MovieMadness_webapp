@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+{{ super() }}
+{% endblock %}
+
+{% block title %} Users {% endblock %}
+
+{% block content %}
+<div class="container">
+    {% block page_content %}
+    <h1>Movies</h1>
+    <p> A list of all movies held in the database </p>
+
+    {% if movies is not none and movies|length > 0 %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Movie Name</th>
+                <th>Director</th>
+                <th>Release Date</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+            <tr>
+                <td>{{ movie.movie_id }}</td>
+                <td>{{ movie.movie_name }}</td>
+                <td>{{ movie.movie_director }}</td>
+                <td>{{ movie.movie_release_date }}</td>
+                <td>{{ movie.movie_rating }}</td>
+                <td>
+                    <!-- Update the URL for Edit and Delete -->
+                    <form method="GET" action="{{ url_for('movie.edit_movie', movie_id=movie.movie_id) }}" style="display:inline;">
+                        {{ edit_form.hidden_tag() }}
+                        {{ edit_form.submit(class="btn btn-primary") }}
+                    </form>
+                    <form method="POST" action="{{ url_for('movie.delete_movie', movie_id=movie.movie_id) }}" style="display:inline;">
+                        {{ delete_form.hidden_tag() }}
+                        {{ delete_form.submit(class="btn btn-danger") }}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <tr>
+            <td colspan="4">No movies found</td>
+        </tr>
+    {% endif %}
+    <a href="{{ url_for('movie.add_movie') }}" class="btn btn-danger">Add New Movie</a>
+    {% endblock %}
+</div>
+{% endblock %}
