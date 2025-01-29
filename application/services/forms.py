@@ -1,5 +1,11 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, FloatField, IntegerField
+from wtforms import (
+    StringField,
+    SubmitField,
+    FloatField,
+    IntegerField,
+    SelectField,
+)
 from wtforms.validators import DataRequired, Email
 
 
@@ -27,3 +33,14 @@ class DeleteForm(FlaskForm):
 
 class EditForm(FlaskForm):
     submit = SubmitField("Edit")
+
+
+class UserMovieForm(FlaskForm):
+    submit = SubmitField("User Movies")
+
+
+class ADDUserMovie(FlaskForm):
+    movie_to_add = SelectField(
+        "Movie", choices=[], coerce=int, validators=[DataRequired()]
+    )
+    submit = SubmitField("Add Movie")

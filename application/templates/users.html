@@ -33,9 +33,14 @@
                 <td>{{ user.last_name }}</td>
                 <td>
                     <!-- Update the URL for Edit and Delete -->
-                    <form method="GET" action="{{ url_for('user.edit_user', user_id=user.user_id) }}" style="display:inline;">
+
+                    <form method="GET" action="{{ url_for('user.list_user_movies', user_id=user.user_id) }}" style="display:inline;">
+                        {{ user_movie_form.hidden_tag() }}
+                        {{ user_movie_form.submit(class="btn btn-primary") }}
+                    </form>
+                    <form method="POST" action="{{ url_for('user.edit_user', user_id=user.user_id) }}" style="display:inline;">
                         {{ edit_form.hidden_tag() }}
-                        {{ edit_form.submit(class="btn btn-primary") }}
+                        {{ edit_form.submit(class="btn btn-secondary") }}
                     </form>
                     <form method="POST" action="{{ url_for('user.delete_user', user_id=user.user_id) }}" style="display:inline;">
                         {{ delete_form.hidden_tag() }}

@@ -11,8 +11,10 @@ class User(db.Model):
     email = db.Column(String(50), unique=True)
     first_name = db.Column(String(50))
     last_name = db.Column(String(50))
-    user_movies = db.relationship(
-        "UserMovie", backref="movie", cascade="all, delete-orphan"
+    movies = db.relationship(
+        "Movie",
+        secondary="user_movies",  # Name of the association table
+        backref="users",
     )
 
     def __repr__(self):
@@ -79,7 +81,7 @@ def _create_database_models():
 
 
 if __name__ == "__main__":
-    app = create_app("testing")
+    app = create_app("development")
     with app.app_context():
         db.drop_all()
         print("Creating database models...")
