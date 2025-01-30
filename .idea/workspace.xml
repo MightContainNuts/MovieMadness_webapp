@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b638357-6d65-4a21-af42-bd3ab6abdf49" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/application/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/db/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/db/moviemadness.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/application/db/moviemadness.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/db/test_movie_db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/application/db/test_movie_db.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/routes/user_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/routes/user_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/services/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/services/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/services/sqllite_data_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/services/sqllite_data_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/templates/users.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +22,7 @@
         <option value="pythjon loger" />
         <option value="Pre-commit" />
         <option value="SQLite" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -83,7 +80,7 @@
     "Python.sqllite_data_manager.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "user__movie__functionaility",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/dda/PycharmProjects/MovieMadness_webapp_v2/application/templates",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -121,7 +118,6 @@
         <env name="PYTHONUNBUFFERED" value="1 PYTHONPATH" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Poetry (MovieMadness_webapp_v2) (2)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -154,7 +150,6 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Poetry (MovieMadness_webapp_v2) (2)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -279,6 +274,7 @@
       <updated>1734587839225</updated>
       <workItem from="1734587850538" duration="56000" />
       <workItem from="1737972899689" duration="2189000" />
+      <workItem from="1738232281721" duration="393000" />
     </task>
     <servers />
   </component>
