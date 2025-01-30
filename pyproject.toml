@@ -6,7 +6,7 @@ authors = ["MightContainNuts <mightcontainnuts@icloud.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.13"
+python = "^3.13"
 flask = "^3.1.0"
 flask-wtf = "^1.2.2"
 flask-sqlalchemy = "^3.1.1"
