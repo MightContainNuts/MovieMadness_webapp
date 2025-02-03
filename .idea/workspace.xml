@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b638357-6d65-4a21-af42-bd3ab6abdf49" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/application/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/db/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/db/moviemadness.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/application/db/moviemadness.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/db/test_movie_db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/application/db/test_movie_db.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/routes/user_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/routes/user_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/services/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/services/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/services/sqllite_data_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/services/sqllite_data_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/templates/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +21,7 @@
         <option value="pythjon loger" />
         <option value="Pre-commit" />
         <option value="SQLite" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -66,39 +62,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flask server.Flask (run.py).executor": "Run",
-    "Flask server.Flask.executor": "Run",
-    "Flask server.FlaskProject.executor": "Run",
-    "Python tests.pytest for test_sqllite_data_manager.test_add_movie.executor": "Run",
-    "Python tests.pytest for test_sqllite_data_manager.test_delete_movie.executor": "Run",
-    "Python tests.pytest for test_sqllite_data_manager.test_delete_user.executor": "Run",
-    "Python tests.pytest in test_basic.py.executor": "Run",
-    "Python tests.pytest in test_default.py.executor": "Run",
-    "Python tests.pytest in test_sqllite_data_manager.py.executor": "Run",
-    "Python.Unnamed.executor": "Run",
-    "Python.models.executor": "Run",
-    "Python.run.executor": "Run",
-    "Python.sqllite_data_manager.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "user__movie__functionaility",
-    "last_opened_file_path": "/Users/dda/PycharmProjects/MovieMadness_webapp_v2/application/templates",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flask server.Flask (run.py).executor&quot;: &quot;Run&quot;,
+    &quot;Flask server.Flask.executor&quot;: &quot;Run&quot;,
+    &quot;Flask server.FlaskProject.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_sqllite_data_manager.test_add_movie.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_sqllite_data_manager.test_delete_movie.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_sqllite_data_manager.test_delete_user.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_basic.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_default.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_sqllite_data_manager.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;Python.models.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sqllite_data_manager.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dda/PycharmProjects/MovieMadness_webapp_v2/application/templates&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/application/templates" />
@@ -121,7 +117,6 @@
         <env name="PYTHONUNBUFFERED" value="1 PYTHONPATH" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Poetry (MovieMadness_webapp_v2) (2)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -154,7 +149,6 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Poetry (MovieMadness_webapp_v2) (2)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -279,6 +273,7 @@
       <updated>1734587839225</updated>
       <workItem from="1734587850538" duration="56000" />
       <workItem from="1737972899689" duration="2189000" />
+      <workItem from="1738232281721" duration="2080000" />
     </task>
     <servers />
   </component>

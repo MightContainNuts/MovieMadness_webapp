@@ -5,6 +5,7 @@ from application.app_factory import db
 from application.db.models import User, Movie, UserMovie
 from application.services.data_manager import DataManagerInterface
 from application.services.logger import setup_logger
+from application.services.ombi_interface import OMDIInterface
 
 logger = setup_logger(__name__)
 
@@ -99,21 +100,35 @@ class SQLiteDataManger(DataManagerInterface):
             return None
 
     @override
-    def add_movie(self, new_movie: MovieDict) -> None:
+    def add_movie(self, new_movie: str) -> None:
         """add movie to db"""
         try:
+            # Get movie data from OMDI API
+            with OMDIInterface(new_movie) as omdb:
+                response = omdb.parse_data()
+                if not response:
+                    logger.error(
+                        f"Failed to retrieve/parse data for movie: {new_movie}"
+                    )
+                    return
+
+                movie_director, movie_release_date, movie_rating = response
+
+            # Add movie to the database
             self.session.add(
                 Movie(
-                    movie_name=new_movie["movie_name"],
-                    movie_director=new_movie["movie_director"],
-                    movie_release_date=new_movie["movie_release_date"],
-                    movie_rating=new_movie["movie_rating"],
+                    movie_name=new_movie,
+                    movie_director=movie_director,
+                    movie_release_date=movie_release_date,
+                    movie_rating=movie_rating,
                 )
             )
             self.session.commit()
-            logger.info("Movie added successfully")
+            logger.info(f"Movie '{new_movie}' added successfully")
+            return True
+
         except Exception as e:
-            logger.error(f"Error adding movie: {e}")
+            logger.error(f"Error adding movie '{new_movie}': {e}")
             self.session.rollback()
 
     @override
